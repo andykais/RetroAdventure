@@ -15,7 +15,7 @@ float y = 0;
 float x = 0;
 float speed = 0;
 float gravity = 2;
-float jump = 10;
+float jumpResistance = 15;
 float friction = 1.9;
 float speedr = 0;
 float speedl = 0;
@@ -69,7 +69,7 @@ void move() {
     }
     if (keyUp && iPos.y == boundary) {
       if (iPos.x<resolutionX+5) {
-        speed = (-jump);
+        speed = (-jumpResistance);
         iPos.y += speed;
       }
       //this is where the jump image goes
