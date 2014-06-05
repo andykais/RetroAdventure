@@ -1,6 +1,6 @@
 PVector iPos;
-int resolutionX = 640;
-int resolutionY = 480;
+int resolutionX = 480;
+int resolutionY = 320;
 float boundary = resolutionY-60;
 PImage[] img = new PImage[3];
 boolean keyUp = false;
@@ -30,14 +30,14 @@ void setup() {
 }
 
 void draw() {
-	frameRate(26);
+	frameRate(32);
   move();
   background(loadImage("Background.png"));
   if(keyRight)
     movementType = 'm';
   else if(keyLeft)
     movementType = 'r';
-  else if (still)
+  else if (!keyLeft && !keyRight)
     movementType = 'i';
   joey.render(movementType);
   joey.changePosition(iPos.x, iPos.y);
@@ -99,9 +99,9 @@ void keyPressed() {
 }
 void keyReleased() {
   if (key == CODED) {
-    if (keyCode == UP) {keyUp = false; }
+    if (keyCode == UP)   {keyUp = false; }
     if (keyCode == DOWN) {keyDown = false; }
     if (keyCode == LEFT) { keyLeft = false; still = true;}
-    if (keyCode == RIGHT) { keyRight = false;still = true;}
+    if (keyCode == RIGHT){ keyRight = false;still = true;}
   }
 }
