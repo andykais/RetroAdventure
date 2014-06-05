@@ -36,12 +36,11 @@ class Joey {
         moveCount = 0;
       }
       if (type == 'i') {
-        if (!reverseDir) {
+
+        if (!reverseDir)
           image(idle, position.x, position.y);
-        }
-        else {
+        else
           image(idler, position.x, position.y);
-        }
       }
       //four total positions
       else if (type == 'm') {
