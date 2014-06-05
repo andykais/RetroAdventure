@@ -1,6 +1,6 @@
 PVector iPos;
-int resolutionX = 800;
-int resolutionY = 450;
+int resolutionX = 640;
+int resolutionY = 480;
 float boundary = resolutionY-60;
 PImage[] img = new PImage[3];
 boolean keyUp = false;
